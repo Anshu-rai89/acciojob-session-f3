@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather APP</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- We need to load js file . We execute js file -->
+    <script src="./index.js" defer type="module"></script>
+    
+</head>
+<body>
+    <div  class="container">
+        <h2>Weather APP</h2>
+        <button id="fetch">Fetch Data</button>
+
+        <div id="location-info" style="display: none;">
+            <div >
+                <span>Lat:</span>
+                <span id ='lat' ></span>
+            </div>
+            <div>
+                <span>Long:</span>
+                <span id='long'></span>
+            </div>
+
+        </div>
+        <div id ="weather-info">
+            
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+body {
+    background-color: #03030D;
+    width: 100vw;
+    height: 100vh;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#gameContainer {
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(40,1fr);
+    grid-template-rows: repeat(40,1fr);
+    padding: 10px;
+    border: 1px solid #ffffff;
+}
+
+.snake {
+    height: 10px;
+    width: 10px;
+    background-color: green;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.food {
+    height: 10px;
+    width: 10px;
+    background-color: blue;
+    padding: 3px;
+    border-radius: 5px;
+}

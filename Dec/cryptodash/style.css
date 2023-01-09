@@ -1,0 +1,40 @@
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.crypto-image {
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+}
+
+.capital {
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+#crpto-dash {
+    padding: 16px;
+    background-color: #1A1A1C;
+    color: #E1E1E1;
+    width: 80%;
+}
+
+tr {
+    padding: 10px;
+    border-bottom: 1px solid #8B8B8D;
+}
+
+.class-green {
+    color: green;
+}
+
+.class-red {
+    color: red;
+}
