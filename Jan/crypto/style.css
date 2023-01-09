@@ -1,0 +1,33 @@
+body {
+    background-color: #1E1E1E;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cryptoTable {
+    color: #E2E2E3;
+    padding: 10px;
+    height: 80%;
+    width: 80%;
+    border: 1px solid #E2E2E3;
+}
+
+.cryptoImage {
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+}
+
+.capitlaise {
+    text-transform: uppercase;
+}
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
