@@ -1,0 +1,42 @@
+body{
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+}
+
+#listItem{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    height: 80%;
+
+}
+
+input {
+    width: 70%;
+    border: none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffffff;
+    background-color: #000000;
+    color: #ffffff;
+    height: 30px;
+}
+
+button {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    color: #000000;
+}
+
+#list div{
+    display: flex;
+    justify-content: space-around;
+}
