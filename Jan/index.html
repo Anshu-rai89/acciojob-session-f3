@@ -4,37 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo APP</title>
+    <title>Issues</title>
     <link rel="stylesheet" href="./style.css">
     <script async src="./index.js"></script>
 </head>
 <body>
-    <div class="todoContainer">
-        <h3>Todo List</h3>
-        <div class="inputlist">
-            <input type='text' id="todo" placeholder="Item Name">
-            <input type="date" id="deadline" placeholder="Deadline">
-            <select id="priority">
-                <option value="high">High</option>
-                <option value="high">Medium</option>
-                <option value="high">Low</option>
-            </select>
-            <button id="add">Add item</button>
-        </div>
+    <div class="container">
+    <h3> Page number <span id="pNo"></span></h3>
+    <ul id="list">
 
-        <div class="todoItemContainer">
-            <h3>Todas's Todo list</h3>
-            <div id="today"></div>
-        </div>
-        <div  class="todoItemContainer">
-            <h3>Future Todo list</h3>
-            <div id="future"></div>
-        </div>
+    </ul>
 
-        <div  class="todoItemContainer">
-            <h3>Completed Todo list</h3>
-            <div id="past"></div>
-        </div>
+    <div class="flex">
+
+        <button id="load_prev">Prev</button>
+        <button id="load_next">Next</button>
     </div>
+</div>
 </body>
 </html>

@@ -1,124 +1,57 @@
-const addbtn = document.getElementById('add');
-const todoElement = document.getElementById('todo');
-const deadlineElement = document.getElementById('deadline');
-const priorityElement = document.getElementById('priority');
+const pNoSpan = document.getElementById('pNo'),
+    listElement = document.getElementById('list'),
+    nextBtn = document.getElementById('load_next'),
+    prevBtn = document.getElementById('load_prev');
 
-const addTodoToLocalStorage = (todoList) => {
-    localStorage.setItem('todoList', JSON.stringify(todoList));
-}
+let pageNumber = 1;
 
-const getTodoListFromLocalStorage = () => {
-    let todoList = JSON.parse(localStorage.getItem('todoList'));
-    todoList = todoList ? todoList : [];
+const renderIssues = (issues) => {
 
-    return todoList;
-}
-
-
-const renderTodo = (todo, parentContainer) => {
-    const todoList = getTodoListFromLocalStorage();
-    const tdoIndex = todoList.findIndex(item => item.name === todo.name);
-    // create a todo element
-
-    const parentDiv = document.createElement('div');
-    parentDiv.classList.add('flex');
-    const todoDiv = document.createElement('div');
-    todoDiv.textContent = todo.name;
-
-    const deadline = document.createElement('div');
-
-    console.log("todo date", new Date(todo.deadline));
-    deadline.textContent= `${new Date(todo.deadline).toISOString().substring(0,10)}`;
-
-    const priority = document.createElement('div');
-    priority.textContent = todo.priority;
-
-    const btns = document.createElement('div');
-    const completedBtn = document.createElement('button');
-    const deletedbutton = document.createElement('button');
-
-    completedBtn.textContent = 'complete'
-    deletedbutton.textContent = 'delete';
-    deletedbutton.onclick = (e) => deleteTodo(e);
-    completedBtn.onclick = (e) => completedTodo(e);
-
-    completedBtn.id = tdoIndex;
-    deletedbutton.id = tdoIndex;
-
-    btns.appendChild(completedBtn);
-    btns.appendChild(deletedbutton);
-
-
-    parentDiv.appendChild(todoDiv);
-    parentDiv.appendChild(deadline);
-    parentDiv.appendChild(priority);
-    parentDiv.appendChild(btns);
-
-    parentContainer.appendChild(parentDiv);
-    // add it inside parentContainer
-}
-
-const renderTodoItems = (containerId, todoList) => {
-    const todoItemContainer = document.getElementById(containerId);
-    while(todoItemContainer.firstChild) {
-        todoItemContainer.removeChild(todoItemContainer.firstChild)
+    while(listElement.firstChild) {
+        listElement.removeChild(listElement.firstChild);
     }
 
-    todoList.map((item) => {
-        renderTodo(item, todoItemContainer);
-    });
+    issues.forEach(issue => {
+        // First create a li issue
+        const li = document.createElement('li');
+        li.textContent = issue.title;
+
+        // Second append in inside list
+        listElement.appendChild(li);
+
+        listElement.innerHTML = `
+            <div>
+                <li style='color: black'> ${issue.title}</li>
+            </div>
+        `
+    })
 }
 
-const deleteTodo = (e) => {
-    const index = e.target.id ;
-    console.log("Index", index);
-    const todoLists = getTodoListFromLocalStorage();
-    todoLists.splice(index, 1);
-    addTodoToLocalStorage(todoLists);
-    renderTodos();
+const fetchIssues = async()=> {
+    pNoSpan.textContent = pageNumber;
+    const url  = `https://api.github.com/repositories/1296269/issues?page=${pageNumber}&per_page=5`
+    const res = await fetch(url);
+    const data = await res.json();
+
+    renderIssues(data);
+
 }
 
-const completedTodo = (e) => {
-    const index = e.target.id ;
-    const todoLists = getTodoListFromLocalStorage();
-    todoLists[index].isCompleted = true;
-    addTodoToLocalStorage(todoLists);
-    renderTodos();
-}
-const renderTodos = () => {
-    const todoList = getTodoListFromLocalStorage();
-    const todatDate = new Date();
-    const todayDate = todatDate.toISOString.substring(0,11);
-    const todasTodo = todoList.filter(todo => {
-        return new Date(todo.deadline).toISOString.substring(0,11) == todayDate && !todo.isCompleted;
-        });
-    const futureTodo = todoList.filter(todo => new Date(todo.deadline).getDate() > todayDate && !todo.isCompleted);
-    const completedTodo = todoList.filter(todo => todo.isCompleted);
-
-    renderTodoItems('today', todasTodo);
-    renderTodoItems('future', futureTodo);
-    renderTodoItems('past', completedTodo);
+const handleNextClick = () => {
+    pageNumber+= 1 ;
+    fetchIssues();
 }
 
-const addTodo = ()=> {
-    const todo = todoElement.value;
-    const deadline = deadlineElement.value;
-    const priority = priorityElement.value;
-
-    const date = new Date(deadline);
-    const todoObj = {
-        name: todo,
-        deadline: date,
-        priority,
-        isCompleted: false
+const prevClick = () => {
+    if(pageNumber === 1) {
+        alert("Page number is 1");
+        return;
     }
 
-    const todoList = getTodoListFromLocalStorage();
-    todoList.push(todoObj);
-    addTodoToLocalStorage(todoList);
-    renderTodos();
+    pageNumber-= 1;
+    fetchIssues();
 }
 
-renderTodos();
-
-addbtn.addEventListener('click', addTodo);
+nextBtn.addEventListener('click' ,handleNextClick);
+prevBtn.addEventListener('click',prevClick);
+document.addEventListener('DOMContentLoaded', fetchIssues);

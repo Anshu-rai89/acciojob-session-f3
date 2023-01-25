@@ -1,46 +1,32 @@
 body {
-    height: 100vh;
-    width: 100vw;
-
-}
-
-input , select{
-    width: 200px;
-}
-.todoContainer {
-    height: 90%;
-    width: 90%;
-    padding: 10px;
+    background-color: #000000;
+    color: #ffffff;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: space-between;
+    height: 100vh;
+    width: 100vmin;
     flex-direction: column;
 }
 
-.inputlist {
-    width: 80%;
+.container{
+align-items: center;
+justify-content: center;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    padding: 10px;
+    border:  1px solid #ffffff;
 }
 
 button {
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
+ background-color: #ffffff;
+ color: #000000;
+ padding: 10px 20px;
 }
 
-.todoItemContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 80%;
-}
-
-.todoItemContainer {
-    display: flex;
-    justify-content: space-between;
-}
 .flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
