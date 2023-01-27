@@ -13,7 +13,8 @@ function logMsg () {
     console.log(msg);
 }
 
-setTimeout(logMsg,3000);  // This is a web api -> APIs Takes time to execute -> JS Execute them async
+setTimeout(logMsg,3000);
+  // This is a web api -> APIs Takes time to execute -> JS Execute them async
 console.log("Hi");
 
 /**

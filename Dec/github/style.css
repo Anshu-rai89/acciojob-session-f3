@@ -1,0 +1,27 @@
+body{
+    background-color: #ffffff;
+    color:#000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#container {
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.issue {
+    width: 100%;
+    display: flex;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    gap: 10px
+}
