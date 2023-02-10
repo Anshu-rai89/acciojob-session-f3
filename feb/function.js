@@ -49,7 +49,7 @@ var a = 90;
 
 
 // Function expression
-var logMsgVariable = function (msg) {
+var logMsgVariable = function logMsg (msg) {
   console.log(msg);
 };
 
@@ -60,3 +60,11 @@ logMsgVariable = 90;
 console.log(logMsgVariable);
 logMsgVariable();
 
+function addTwoNumber (a) {
+  var b = 90;
+  return a+b;
+}
+
+const sum = addTwoNumber(100);
+console.log(sum);
+console.log(b);

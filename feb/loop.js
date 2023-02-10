@@ -16,12 +16,15 @@ var step = 1;
 // while loop 
 
 // while (condition) -> if condition true loop will run if false it stop
-// while (start <= end) {
-//     console.log(start);
-//     start+= step ;
-// }
+while (start <= end) { // 101 <= 100
+    console.log(start);
+    start+= step ; // 100
+}
 
-// for loop
+// for loop 
+/**
+ *  for (start condition , end condition , step)
+ */
 
 for(var i = start; i<= end ; i+= step) {
     console.log(i);
