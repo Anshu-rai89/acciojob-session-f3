@@ -68,3 +68,24 @@ function addTwoNumber (a) {
 const sum = addTwoNumber(100);
 console.log(sum);
 console.log(b);
+
+function handleSlide() {
+  // get all the images
+  var images = document.querySelectorAll(".slide-in");
+
+  images.forEach(function (img) {
+    var distnaceFromOriginInYDirection =
+      window.scrollY + window.innerHeight - img.height / 2;
+    var imageBottoMDistnaceFromOrigin = image.offsetTop + img.height;
+
+    var isImageFullyScrolled =
+      distnaceFromOriginInYDirection > imageBottoMDistnaceFromOrigin;
+    var isImageHalfScrolled = distnaceFromOriginInYDirection > images.scrollTop;
+    alert(isImageFullyScrolled, isImageHalfScrolled);
+    if (isImageHalfScrolled && !isImageFullyScrolled) {
+      img.classList.add("active");
+    } else {
+      img.classList.remove("active");
+    }
+  });
+}
