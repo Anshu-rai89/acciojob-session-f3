@@ -1,0 +1,75 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 32px;
+}
+
+.form {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+input {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    width: 70%;
+    height: 40px;
+}
+
+button {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 15px 24px;
+    width: 100%;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    border: 1px solid #ffffff;
+}
+
+thead tr {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ffffff;
+}
+
+tbody tr {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.red {
+    color: red;
+}
+
+.flex {
+    display: flex;
+    gap: 10px
+}
+
+.flex button {
+    width: 120px;
+}

@@ -1,4 +1,3 @@
-debugger;
 var start = 0;
 function add (b) {
     debugger;
