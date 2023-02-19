@@ -11,8 +11,30 @@ const tableBody = document.querySelector("tbody");
 const books = [
 ];
 
+function handleEdit(event) {
+   const buttonElement  = event.target;
+   console.log(buttonElement);
+    const id = buttonElement.id;
 
-function createTableRow (data, tableBody, id) {
+   if (buttonElement.textContent === 'Edit') {
+    event.target.textContent = "Save";
+    const parentElement = buttonElement.parentElement;
+
+    parentElement.removeChild(parentElement.firstChild);
+
+    const input = document.createElement("input");
+    input.id = 'status-inp';
+    input.value = books[id - 1].status;
+    parentElement.insertBefore(input, event.target);
+   } 
+   else{
+      const statusElement = document.getElementById('status-inp');
+      books[id - 1].status = statusElement.value;
+      renderBooksInsideTable();
+   }
+
+}
+function createTableRow (data, tableBody, bookId) {
     // First create a tr
     //  const tr = `
     //   <tr>
@@ -28,7 +50,7 @@ function createTableRow (data, tableBody, id) {
     // create 5 ths and add data inside it
 
     const idTd = document.createElement("td");
-    idTd.textContent = id;
+    idTd.textContent = bookId;
 
     const bookNameTd = document.createElement("td");
     bookNameTd.textContent = data.name;
@@ -41,18 +63,21 @@ function createTableRow (data, tableBody, id) {
     issuedAtTd.textContent = data.issuedAt;
 
     const statusTd = document.createElement("td");
-    const div = document.createElement('div');
-    div.classList.add('flex')
+    statusTd.classList.add('flex');
+
     const button = document.createElement('button');
     const span = document.createElement('span');
+
     span.textContent = data.status;
-    span.classList.add('red'); 
+    const className = data.status === "not returned" ? "red" : "green";
+    span.classList.add(className);
+
     button.textContent = 'Edit';
+    button.id = bookId;
+    button.addEventListener("click", handleEdit);
 
-    div.appendChild(span);
-    div.appendChild(button);
-
-    statusTd.appendChild(div);
+    statusTd.appendChild(span);
+    statusTd.appendChild(button);
      
     // add these ths in tr 
 

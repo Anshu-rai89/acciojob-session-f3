@@ -73,3 +73,7 @@ tbody tr {
 .flex button {
     width: 120px;
 }
+
+.green {
+    color: green;
+}
