@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h3 id="heading"></h3>
+    <form>
+        <div>
+            <label>Name:</label> <input type="text" id="name" data-testid="name" required>
+        </div>
+        <div>
+            <label>Email:</label> <input type="text" id="email" data-testid ="email" required>
+        </div>
+        <div>
+            <label>Gender</label>
+            <select id="gender" data-testid ="gender" >
+                <option selected value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+         
+        <div>
+            <label>Phone Number:</label> <input type="number" id="phoneNumber" data-testid="phoneNumber" required>
+        </div>
+        <div>
+            <label>Password:</label> <input type="password" id="password" data-testid="password" required>
+        </div>
+        <div>
+            <label>Confirm Password:</label> <input type="text" id="confirmPassword" data-testid="password" required>
+        </div>
+
+        <div class="error" id="error"></div>
+        <input type="submit" value="Submit" id="submit" data-testid="submit">
+     
+    </form>
+    <script src="./index.js"></script>
+</body>
+</html>

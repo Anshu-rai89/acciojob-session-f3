@@ -91,8 +91,15 @@ function createTableRow (data, tableBody, bookId) {
     tableBody.appendChild(tr);
 }
 
+
 /**
  * This will render all items present in the books into table
+ * ["RD sharma","JS"]
+ * <tbody>
+ *  <tr> RD sharma</tr>
+ * <tr> Rd sharma </tr>
+ * <tr>   JS </tr>
+ * </tbody>
  */
 function renderBooksInsideTable() {
 
@@ -100,7 +107,6 @@ function renderBooksInsideTable() {
     //     tableBody.removeChild(tableBody.firstChild)
     // }
 
-    tableBody.innerHTML = "";
 
    books.map(function (book, index) {
 

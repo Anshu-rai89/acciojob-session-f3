@@ -1,0 +1,33 @@
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+    width: 60%;
+    padding: 20px;
+}
+
+form div {
+    display: flex;
+    justify-content:space-between;
+}
+
+input, select {
+    height: 30px;
+    width: 90%;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
+
+.error {
+    color: red;
+}
