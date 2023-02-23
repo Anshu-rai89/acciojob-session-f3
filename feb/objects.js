@@ -60,7 +60,7 @@ product.isAvailable = true;
 product.giveDiscount = function (discountPercentage) {
    // It allow us to refer to same object using which it is getting created
      var discountValue =  Math.floor(product.price * (discountPercentage /100 ))
-     return product.price - discountValue;
+     return this.price - discountValue;
 };
 
 product.info = {

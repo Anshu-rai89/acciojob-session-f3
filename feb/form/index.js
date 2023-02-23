@@ -44,6 +44,20 @@ function handleFormSubmit(event) {
        const [userName] = email.split("@");
 
        headingElement.textContent = "Hello " + userName;
+
+       //JS Object -> JSON 
+       const userObject = {
+         name: name,
+         password: password,
+         phone_number: phoneNumber,
+         email: email,
+         gender: gender
+       };
+
+       console.log(userObject);
+
+       const userObjectInString = JSON.stringify(userObject);
+       console.log(userObjectInString);
      }
 }
 
