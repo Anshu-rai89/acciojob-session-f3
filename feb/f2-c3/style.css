@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    width: 100%;
+}
+
+.dashboard {
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px;
+}
+
+button {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    width: 150px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #000000;
+}
+
+table tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    height: 40px;
+    width: 150px;
+}
+
+
