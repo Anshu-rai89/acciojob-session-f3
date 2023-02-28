@@ -1,0 +1,57 @@
+.score {
+    width: 100%;
+    background-color: black;
+    height: 70px;
+}
+
+body {
+    color: white;
+}
+.game {
+    width: 400px;
+    height: 90vh;
+    position: relative;
+    background-color: black;
+    margin: auto;
+}
+
+.start {
+    background-color: red;
+    padding: 20px;
+    color: white;
+    height: 150px;
+    width: 600px;
+    position: absolute;
+    margin-left: 28%;
+    margin-top: 32px;
+    z-index: 1;
+    text-align: center;
+}
+
+.hide {
+    display:none;
+}
+
+.car {
+    /* background-image: url("car2.png");
+    background-size: contain; */
+    background-color: red;
+    height: 100px;
+    width: 70px;
+    position: absolute;
+    bottom: 0;
+}
+
+.line {
+    background-color: white;
+    height: 100px;
+    position: absolute;
+    left: 47%;
+    width: 10px;
+}
+.enemy {
+    position: absolute;
+    height: 80px;
+    width: 70px;
+    background-color: green;
+}
